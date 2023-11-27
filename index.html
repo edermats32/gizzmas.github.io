@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🦎Gizzmas Calendar🎄</title>
+    <link rel="stylesheet" href="./style.css">
+    <script type="module" src="main.js"></script>
+
+    <!-- https://github.com/pajasevi/CSSnowflakes -->
+    <link rel="stylesheet" href="./snowfall.css">
+
+    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_google-content_copy -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-rotate-left -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- https://github.com/davidbau/seedrandom -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><span>🎄🦎</span> The Gizzmas Calendar 2023! <span>🦎🎄</span></h1>
+        <nav>
+            <h2 class="heading2">Calendar Seed</h2>
+            <div id="changeSeed">
+                <button id="copySeedBtn" onclick="copySeedToClip()"><i class="material-icons">content_copy</i></button>
+                <input id="seedInput" type="text" placeholder="Your Seed Please...">
+                <button id="enterSeedBtn" onclick="rotateIcon()"><i style="font-size:24px"
+                        class="fa">&#xf0e2;</i></button>
+            </div>
+            <div id="seedOptions">
+                <input id="includeLive" name="seedOption" type="checkbox">
+                <label for="includeLive">Live Albums</label>
+                <input id="includeCompilations" name="seedOption" type="checkbox">
+                <label for="includeCompilations">Compilations</label>
+                <input id="includeEps" name="seedOption" type="checkbox">
+                <label for="includeEps">Eps</label>
+                <input id="includeRemix" name="seedOption" type="checkbox">
+                <label for="includeRemix">Remix</label>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <noscript>
+            <h2>Calendar requires Javascript. Sorry...</h2>
+            <p>Merry XMAS I guess...</p>
+            <label for="noJS-checkbox">Check me for gif (Epilepsy warning, maybe?)</label>
+            <input type="checkbox" name="" id="noJS-checkbox">
+            <img id="noJS-gif" src="https://media.tenor.com/6JPQCSVQcRoAAAAC/kglw-king-gizzard.gif" alt="">
+        </noscript>
+        <h2 id="todaysDoorH2" class="heading2"></h2>
+        <div id="todayDoor"></div>
+        <h2 id="calendarH2" class="heading2"></h2>
+        <div id="calendar"></div>
+    </main>
+    <footer>
+        <small>
+            I own nothing here — neither the content nor the code.
+            While I wrote some of it, I also borrowed parts.
+            All releases belong to and/or are created by <a style="color: lime;" target="_blank"
+                href="https://kinggizzardandthelizardwizard.com/">KING GIZZARD & THE LIZARD WIZARD</a>.
+        </small>
+    </footer>
+
+    <!-- https://github.com/pajasevi/CSSnowflakes -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+    <script>
+        function rotateIcon() {
+            const icon = document.querySelector('#enterSeedBtn').querySelector("i");
+
+            // Get the current rotation value or set it to 0 if it's undefined
+            let currentRotation = parseFloat(icon.dataset.rotation || 0);
+
+            // Increment the rotation value by 360 degrees for each click
+            currentRotation += -360;
+
+            // Apply the new rotation using inline style
+            icon.style.transition = 'transform 2s'; // Adding a transition for a smooth rotation
+            icon.style.transform = `rotate(${currentRotation}deg)`;
+
+            // Store the updated rotation value in the dataset attribute for future clicks
+            icon.dataset.rotation = currentRotation;
+        }
+        function copySeedToClip() {
+            const seed = document.querySelector('#seedInput').value;
+            navigator.clipboard.writeText(seed).then(function () {
+                alert('Seed copied to clipboard!\nThe seed is used to get the same instance of the calender.\nSave it somewhere safe for next time you want to access your calendar.\nReplace the existing seed and press the load-button.');
+            }).catch(function (err) {
+                console.error('Unable to copy to clipboard', err);
+            });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,477 @@
+/* https://webfonts.ffonts.net/DavidaOpti-Bold.font */
+@font-face {
+    font-family: 'DavidaOpti-Bold';
+    src: url('./DavidaOpti-Bold.ttf.woff') format('woff')
+}
+
+* {
+    font-family: Ultramagnetic, sans-serif;
+}
+
+iframe {
+    width: 17em;
+    height: 17em;
+}
+
+.snowflakes .snowflake {
+    font-size: 200%;
+    pointer-events: none;
+}
+
+html {
+    background-color: black;
+    color: lime;
+}
+
+header {
+    text-align: center;
+}
+
+h1 {
+    font-family: 'DavidaOpti-Bold';
+    font-size: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+h1 span{
+    display: flex;
+    font-size: 5vw;
+}
+
+.heading2 {
+    text-align: center;
+    font-family: 'DavidaOpti-Bold';
+    margin: 0;
+    text-decoration: underline;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    flex-wrap: wrap;
+    margin: 0;
+
+    position: relative;
+}
+
+#changeSeed {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+
+
+#changeSeed input {
+    width: 15em;
+}
+
+#seedBtns {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav button {
+    width: max-content;
+    justify-self: center;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav button:hover {
+    background-color: lime;
+    color: black;
+    border: dotted black;
+}
+
+nav input,
+nav button {
+    background-color: black;
+    border: dotted lime;
+    color: lime;
+    text-align: center;
+    outline: none;
+
+    padding: 0.5em;
+}
+
+#enterSeedBtn::after,
+#copySeedBtn::after{
+    position: absolute;
+    top: 0;
+    width: max-content;
+
+    display: none;
+}
+
+#enterSeedBtn:hover::after,
+#copySeedBtn:hover::after{
+    display: block;
+    color: lime;
+    background-color: black;
+    border: dotted lime;
+    padding: 0.5em;
+}
+
+#enterSeedBtn::after{
+    content: 'Load Seed';
+}
+
+#copySeedBtn::after{
+    content: 'Copy to Clipboard';
+}
+
+#seedOptions {
+    display: flex;
+    gap: 0.5em;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: small;
+}
+
+#seedOptions input {
+    display: none;
+}
+
+#seedOptions label {
+    border: dotted lime;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+#seedOptions label:hover {
+    background-color: rgb(13, 56, 13)
+}
+
+#seedOptions input:checked+label {
+    background-color: lime;
+    color: black;
+    border: dotted black;
+}
+
+main {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+#calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    */
+}
+
+.trap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    gap: 1rem;
+}
+
+.trapdoor {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    border: dotted lime;
+    width: 17em;
+    height: 17em;
+    background-size: cover;
+
+    position: relative;
+}
+
+.trapdoor:hover {
+    transform: scale(105%);
+    cursor: pointer;
+}
+
+.trapdoor:active {
+    transform: scale(110%);
+    cursor: pointer;
+}
+
+.trapCheckbox {
+    display: none;
+}
+
+.trapdoorTrap {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 17em;
+    height: 17em;
+    transition: 1s;
+    border: dotted lime;
+
+    order: 1;
+
+    position: relative;
+}
+
+.trapCheckbox:checked+.trapdoorTrap {
+    display: flex;
+}
+
+.releaseInfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.releaseInfo h4 {
+    width: 100%;
+}
+
+
+.releaseInfo h6 {
+    margin: 0;
+    padding: 0.5em;
+    border: dotted lime;
+    border-left: none;
+    width: min-content;
+    height: min-content;
+}
+
+.bootleggerLink {
+    position: relative;
+    margin-right: 1.5rem;
+}
+
+.bootleggerLink::after {
+    position: absolute;
+    content: 'Bootleg Me!';
+    width: 7em;
+    top: 1.5em;
+    right: 5em;
+
+    transform: rotate(-45deg);
+
+    border: dotted lime;
+    padding: 0.3em;
+    color: lime;
+    background-color: black;
+
+    display: none;
+}
+
+.bootleggerLink:hover::after {
+    display: block;
+}
+
+.bootleggerLink:hover,
+.bootleggerLink:active {
+    cursor: pointer;
+}
+
+.bootleggerIcon {
+    width: 5.5em;
+    transition: transform 1s ease-in-out;
+    border: dotted lime;
+    border-radius: 100%;
+}
+
+.bootleggerIcon:hover,
+.bootleggerIcon:active {
+    transform: rotate(360deg);
+    background-color: lime;
+    border: black dotted;
+    transition: 1s ease-in-out;
+}
+
+.links {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.link {
+    width: 3em;
+    height: 3em;
+    border: dotted lime;
+    padding: 0.2em;
+    border-bottom: none;
+    cursor: pointer;
+
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+
+    text-decoration: none;
+    color: lime;
+}
+
+.linkTooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+
+    border: dotted lime;
+
+    text-transform: capitalize;
+}
+
+.link:hover .linkTooltip,
+.link:active .linkTooltip {
+    visibility: visible;
+}
+
+.link:hover,
+.link:active {
+    background-color: lime;
+    border: dotted black;
+    border-bottom: none;
+}
+
+.linkIcon {
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+}
+
+/* https://github.com/dkanada/frost/ */
+
+.spotifyIcon {
+    background-image: url('./linkIcons/spotify.png');
+}
+
+.link:hover>.spotifyIcon,
+.link:active>.spotifyIcon {
+    background-image: url('./linkIcons/spotify_inv.png');
+}
+
+.youtubeIcon {
+    background-image: url('./linkIcons/youtube.png');
+}
+
+.link:hover>.youtubeIcon,
+.link:active>.youtubeIcon {
+    background-image: url('./linkIcons/youtube_inv.png');
+}
+
+.appleIcon {
+    background-image: url('./linkIcons/applemusic.png');
+}
+
+.link:hover>.appleIcon,
+.link:active>.appleIcon {
+    background-image: url('./linkIcons/applemusic_inv.png');
+}
+
+.bandcampIcon {
+    background-image: url('./linkIcons/bandcamp.png');
+}
+
+.link:hover>.bandcampIcon,
+.link:active>.bandcampIcon {
+    background-image: url('./linkIcons/bandcamp_inv.png');
+}
+
+.re-clickInfo {
+    font-size: small;
+    text-transform: capitalize;
+
+    bottom: 0;
+    padding-bottom: 0.33em;
+    padding-top: 0.33em;
+    align-self: center;
+    width: 100%;
+    border-top: lime dotted;
+}
+
+.doorDay {
+    padding: 0.5rem;
+    margin: 0;
+    border-top: dotted lime;
+    border-left: dotted lime;
+    background-color: black;
+    width: 2rem;
+    text-align: center;
+}
+
+.lock {
+    position: absolute;
+    top: 58%;
+    left: 47%;
+    transform: scale(250%);
+}
+
+.lock::after {
+    content: "❓";
+    text-align: center;
+}
+
+.trapdoor:hover>.lock::after {
+    content: "🔒";
+}
+
+.trapdoor:active>.lock::after {
+    content: "🔒";
+}
+
+.trapdoor:active>.lock {
+    display: block;
+    transform: scale(300%);
+}
+
+.countdown {
+    position: absolute;
+    top: 43%;
+    left: 46%;
+    font-family: 'DavidaOpti-Bold';
+    font-size: xx-large;
+    filter: blur(0.69px);
+}
+
+footer {
+    border-top: dotted lime;
+    border-bottom: dotted lime;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+#noJS-gif {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+#noJS-checkbox:checked+#noJS-gif {
+    display: block;
+}
