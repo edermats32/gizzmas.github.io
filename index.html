@@ -11,10 +11,8 @@
     <!-- https://github.com/pajasevi/CSSnowflakes -->
     <link rel="stylesheet" href="./snowfall.css">
 
-    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_google-content_copy -->
+    <!-- https://www.w3schools.com/icons/icons_reference.asp -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- https://www.w3schools.com/icons/tryit.asp?filename=tryicons_fa-rotate-left -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- https://github.com/davidbau/seedrandom -->
@@ -23,9 +21,29 @@
 
 <body>
     <header>
+        <a target="_blank" href="https://github.com/edermats32/gizzmas.github.io">This webpage is hosted on GitHub
+            Pages.<br>Click here to access the repository.</a>
         <h1><span>🎄🦎</span> The Gizzmas Calendar 2023! <span>🦎🎄</span></h1>
         <nav>
-            <h2 class="heading2">Calendar Seed</h2>
+            <input type="radio" name="seedInfo_radio" id="seedInfo_Outer">
+            <div id="seedInfoBox_Outer">
+                <div id="seedInfoBox_Inner">
+                    <label class="label-icon" for="seedInfo_Inner" id="seedInfoLabel">
+                        <i class="fa fa-window-close filled"></i>
+                        <i class="fa fa-window-close-o not-filled"></i>
+                    </label>
+                    <p>The seed is used to get the same instance of the calender.\nSave it somewhere safe for next time
+                        you want to access your calendar.\nReplace the existing seed and press the load-button.</p>
+                    <input checked type="radio" name="seedInfo_radio" id="seedInfo_Inner">
+                </div>
+            </div>
+            <div class="h2Info">
+                <h2 class="heading2">Calendar Seed</h2>
+                <label class="label-icon" for="seedInfo_Outer" id="seedQuestionLabel">
+                    <i class="fa fa-question-circle filled"></i>
+                    <i class="fa fa-question-circle-o not-filled"></i>
+                </label>
+            </div>
             <div id="changeSeed">
                 <button id="copySeedBtn" onclick="copySeedToClip()"><i class="material-icons">content_copy</i></button>
                 <input id="seedInput" type="text" placeholder="Your Seed Please...">
@@ -104,7 +122,16 @@
         function copySeedToClip() {
             const seed = document.querySelector('#seedInput').value;
             navigator.clipboard.writeText(seed).then(function () {
-                alert('Seed copied to clipboard!\nThe seed is used to get the same instance of the calender.\nSave it somewhere safe for next time you want to access your calendar.\nReplace the existing seed and press the load-button.');
+                const seedInput = document.querySelector("#seedInput")
+                const seed = seedInput.value
+                seedInput.value = "Copied Seed to Clipboard!"
+
+                const enterSeedBtn = document.querySelector("#enterSeedBtn")
+                enterSeedBtn.disabled = true
+                setTimeout(() => {
+                   seedInput.value = seed
+                   enterSeedBtn.disabled = false
+                }, 1200);
             }).catch(function (err) {
                 console.error('Unable to copy to clipboard', err);
             });

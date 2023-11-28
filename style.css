@@ -13,9 +13,92 @@ iframe {
     height: 17em;
 }
 
+#seedInfoBox_Outer {
+    display: none;
+
+    position: fixed;
+    z-index: 500;
+
+    top: 50%;
+    /* Positioning at 50% from the top */
+    left: 50%;
+    /* Positioning at 50% from the left */
+
+    transform: translate(-50%, -50%);
+    /* Move the element back by half of its own width and height */
+}
+
+
+#seedInfo_Outer:checked+#seedInfoBox_Outer {
+    display: block;
+}
+
+#seedInfoBox_Inner {
+    position: relative;
+    border: dotted lime;
+    background-color: black;
+    width: 30vw;
+    height: 20em;
+}
+
+#seedInfoLabel {
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin: 0.33em;
+    font-size: xx-large;
+}
+
+.h2Info {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+nav input[type="radio"] {
+    display: none;
+}
+
+.label-icon {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    position: relative;
+}
+
+.label-icon:hover{
+    cursor: pointer;
+}
+
+#seedQuestionLabel:hover::after {
+    position: absolute;
+    font-size: medium;
+    content: 'What is this?';
+    position: absolute;
+    top: -45px;
+    width: max-content;
+
+    border: dotted lime;
+    padding: 0.5em;
+}
+
+.label-icon>.filled {
+    display: none;
+}
+
+.label-icon:hover>.filled {
+    display: block;
+}
+
+.label-icon:hover>.not-filled {
+    display: none;
+}
+
 .snowflakes .snowflake {
     font-size: 200%;
     pointer-events: none;
+
+    z-index: 500;
 }
 
 html {
@@ -25,6 +108,22 @@ html {
 
 header {
     text-align: center;
+    display: grid;
+}
+
+header a {
+    color: lime;
+    text-decoration: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    font-size: smaller;
+}
+
+header a:hover {
+    transform: scale(1.1);
 }
 
 h1 {
@@ -35,9 +134,11 @@ h1 {
     align-items: center;
     justify-content: center;
     gap: 2rem;
+
+    margin-top: 0;
 }
 
-h1 span{
+h1 span {
     display: flex;
     font-size: 5vw;
 }
@@ -107,17 +208,22 @@ nav button {
     padding: 0.5em;
 }
 
+#enterSeedBtn,
+#copySeedBtn {
+    position: relative;
+}
+
 #enterSeedBtn::after,
-#copySeedBtn::after{
+#copySeedBtn::after {
     position: absolute;
-    top: 0;
+    top: -45px;
     width: max-content;
 
     display: none;
 }
 
 #enterSeedBtn:hover::after,
-#copySeedBtn:hover::after{
+#copySeedBtn:hover::after {
     display: block;
     color: lime;
     background-color: black;
@@ -125,11 +231,11 @@ nav button {
     padding: 0.5em;
 }
 
-#enterSeedBtn::after{
+#enterSeedBtn::after {
     content: 'Load Seed';
 }
 
-#copySeedBtn::after{
+#copySeedBtn::after {
     content: 'Copy to Clipboard';
 }
 
@@ -461,6 +567,8 @@ footer {
     left: 0;
     box-sizing: border-box;
     background-color: black;
+
+    z-index: 1000;
 }
 
 #noJS-gif {
