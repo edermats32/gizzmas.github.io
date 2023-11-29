@@ -10,11 +10,8 @@ export function createCalendar(gizzSeed, albumListArr) {
     }
 
     const todayDate = new Date();
-   // const month = todayDate.getMonth() + 1 // Months are zero-based, so add 1
-   // const day = todayDate.getDate();
-
-   const month = 12
-   const day = 22
+    const month = todayDate.getMonth() + 1 // Months are zero-based, so add 1
+    const day = todayDate.getDate();
 
     for (let i = 0; i < 25; i++) {
         const dateToday = i + 1;
