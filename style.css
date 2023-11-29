@@ -34,19 +34,26 @@ iframe {
 }
 
 #seedInfoBox_Inner {
-    position: relative;
     border: dotted lime;
     background-color: black;
-    width: 30vw;
-    height: 20em;
+    padding: 1rem;
+
+    max-height: 40em;
+    min-width: 16.66em;
+
+    overflow: scroll;
 }
 
-#seedInfoLabel {
-    top: 0;
-    right: 0;
-    position: absolute;
-    margin: 0.33em;
-    font-size: xx-large;
+#seedInfoBox_Inner #infoHeader{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#seedInfoBox_Inner ul{
+    text-align:left;
+    line-height: 2rem;
 }
 
 .h2Info {

@@ -28,12 +28,26 @@
             <input type="radio" name="seedInfo_radio" id="seedInfo_Outer">
             <div id="seedInfoBox_Outer">
                 <div id="seedInfoBox_Inner">
-                    <label class="label-icon" for="seedInfo_Inner" id="seedInfoLabel">
-                        <i class="fa fa-window-close filled"></i>
-                        <i class="fa fa-window-close-o not-filled"></i>
-                    </label>
-                    <p>The seed is used to get the same instance of the calender.\nSave it somewhere safe for next time
-                        you want to access your calendar.\nReplace the existing seed and press the load-button.</p>
+                    <div id="infoHeader">
+                        <h2 class="heading2">What is the seed?</h2>
+                        <label class="label-icon" for="seedInfo_Inner" id="seedInfoLabel">
+                            <i class="fa fa-window-close filled"></i>
+                            <i class="fa fa-window-close-o not-filled"></i>
+                        </label>
+                    </div>
+                    <ul>
+                        <li>Use the seed to retrieve your calendar instance.</li>
+                        <li>
+                            Copy the seed using the copy button <i class="material-icons">content_copy</i> and store
+                            it securely.
+                        </li>
+                        <li>
+                            To restore your calendar, replace the current seed and click the load button <i
+                                style="font-size:24px" class="fa">&#xf0e2;</i>
+                        </li>
+                        <li>Refresh the page for a new seed.</li>
+                        <li>You can also select album options to include specific album groups in your calendar.</li>
+                    </ul>
                     <input checked type="radio" name="seedInfo_radio" id="seedInfo_Inner">
                 </div>
             </div>
@@ -129,8 +143,8 @@
                 const enterSeedBtn = document.querySelector("#enterSeedBtn")
                 enterSeedBtn.disabled = true
                 setTimeout(() => {
-                   seedInput.value = seed
-                   enterSeedBtn.disabled = false
+                    seedInput.value = seed
+                    enterSeedBtn.disabled = false
                 }, 1200);
             }).catch(function (err) {
                 console.error('Unable to copy to clipboard', err);
