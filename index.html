@@ -135,20 +135,22 @@
         }
         function copySeedToClip() {
             const seed = document.querySelector('#seedInput').value;
-            navigator.clipboard.writeText(seed).then(function () {
-                const seedInput = document.querySelector("#seedInput")
-                const seed = seedInput.value
-                seedInput.value = "Copied Seed to Clipboard!"
+            if (document.querySelector("#seedInput").value != "Copied Seed to Clipboard!") {
+                navigator.clipboard.writeText(seed).then(function () {
+                    const seedInput = document.querySelector("#seedInput")
+                    const seed = seedInput.value
+                    seedInput.value = "Copied Seed to Clipboard!"
 
-                const enterSeedBtn = document.querySelector("#enterSeedBtn")
-                enterSeedBtn.disabled = true
-                setTimeout(() => {
-                    seedInput.value = seed
-                    enterSeedBtn.disabled = false
-                }, 1200);
-            }).catch(function (err) {
-                console.error('Unable to copy to clipboard', err);
-            });
+                    const enterSeedBtn = document.querySelector("#enterSeedBtn")
+                    enterSeedBtn.disabled = true
+                    setTimeout(() => {
+                        seedInput.value = seed
+                        enterSeedBtn.disabled = false
+                    }, 1200);
+                }).catch(function (err) {
+                    console.error('Unable to copy to clipboard', err);
+                });
+            }
         }
     </script>
 </body>
