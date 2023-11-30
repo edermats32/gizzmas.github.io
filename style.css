@@ -41,7 +41,7 @@ iframe {
     max-height: 40em;
     min-width: 16.66em;
 
-    overflow: scroll;
+    overflow: auto;
 }
 
 #seedInfoBox_Inner #infoHeader{
@@ -127,6 +127,8 @@ header a {
     flex-direction: column;
 
     font-size: smaller;
+    width: max-content;
+    justify-self: center;
 }
 
 header a:hover {

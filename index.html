@@ -117,6 +117,10 @@
         <div class="snowflake">❆</div>
     </div>
     <script>
+        ["#includeLive", "#includeCompilations", "#includeEps", "#includeRemix", "#seedInfo_Outer"].forEach(id => {
+            document.querySelector(id).checked = false
+        })
+        
         function rotateIcon() {
             const icon = document.querySelector('#enterSeedBtn').querySelector("i");
 
