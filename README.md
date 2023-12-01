@@ -12,4 +12,6 @@ This website utilizes several resources and libraries:
 
 - **Additional Icons**: Certain icons employed on this site are sourced from the comprehensive list available at [www.w3schools.com](https://www.w3schools.com/icons/icons_reference.asp).
 
+- **DavidaOpti-Bold WebFont**: A font with a gizzy resemblance. I obtained it from [webfonts.ffonts.net](https://webfonts.ffonts.net/DavidaOpti-Bold.font).
+
 These resources greatly contribute to the visual elements and functionalities of gizzmas.github.io.
