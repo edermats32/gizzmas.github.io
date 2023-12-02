@@ -310,7 +310,7 @@ export const studioAlbums = [
             apple: "https://music.apple.com/us/album/eyes-like-the-sky/1509452965",
             bandcamp: "https://kinggizzard.bandcamp.com/album/eyes-like-the-sky"
         },
-        emojiSet: ["🐎", "🪓", "🔫"]
+        emojiSet: ["🐎", "🪓", "👁️"]
     },
     {
         artworkUrl: "https://assets-global.website-files.com/5efd533c87525e006fe4b090/5f0a9725e32edcec418e8d5d_12bar.jpg",
